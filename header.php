@@ -54,3 +54,12 @@
       </nav>
     </header>
 
+    <?php 
+      wp_nav_menu([
+        'menu' => 'categorias',
+        'container' => 'nav',
+        'container_class' => 'menu-categorias',
+      ]);
+    ?>
+
+
