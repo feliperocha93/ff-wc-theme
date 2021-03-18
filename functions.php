@@ -2,10 +2,10 @@
 
 $config = [
   'itensPorPagina' => 6
-]
+];
 
 add_action('after_setup_theme', function () { 
-  add_theme_support('woocommerce') 
+  add_theme_support('woocommerce');
 });
 
 add_action('wp_enqueue_scripts', function () {
@@ -19,7 +19,7 @@ add_action('after_setup_theme', function () {
 });
 
 add_filter('loop_shop_per_page', function () { 
-  return $config['itensPorPagina'] 
+  return $config['itensPorPagina'];
 });
 
 ?>
