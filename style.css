@@ -1,3 +1,7 @@
 /*
 Theme name: Fuma Forte
 */
+
+@import "./css/main.css";
+@import "./css/reset.css";
+@import "./css/header.css";

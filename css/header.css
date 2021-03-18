@@ -1,0 +1,84 @@
+.header {
+  margin: 30px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: minmax(160px, auto) minmax(auto, 600px) minmax(
+      280px,
+      auto
+    );
+  justify-content: space-between;
+  align-items: center;
+  grid-gap: 40px;
+}
+
+.busca form {
+  display: grid;
+}
+
+.busca #campo-busca {
+  border: 2px solid #000;
+  font-size: 1.125rem;
+  border-radius: 4px;
+  padding: 12px 40px 12px 20px;
+  grid-area: 1/1;
+}
+
+.busca #botao-busca {
+  grid-area: 1/1;
+  width: 50px;
+  border: none;
+  cursor: pointer;
+  justify-self: end;
+  text-indent: -100px;
+  background: transparent url("../img/icons/search.svg") no-repeat center;
+}
+
+.conta {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: auto auto;
+}
+
+.conta > a {
+  padding: 5px 0px 5px 34px;
+  background-repeat: no-repeat !important;
+  background-position: center left !important;
+}
+
+.conta .minha-conta {
+  background: url("../img/icons/user.svg");
+}
+
+.conta .carrinho {
+  background: url("../img/icons/cart.svg");
+  position: relative;
+}
+
+.conta .numero-itens-carrinho {
+  display: block;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: #a28;
+  font-size: 0.7rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  position: absolute;
+  top: -5px;
+  left: 5px;
+}
+
+@media (max-width: 800px) {
+  .header {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+
+  .conta {
+    grid-gap: 40px;
+    justify-content: start;
+  }
+}
