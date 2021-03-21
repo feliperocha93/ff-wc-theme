@@ -1,3 +1,4 @@
+/* PRODUTO */
 .produtos-lista {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -42,4 +43,54 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
   }
+}
+
+/* BREADCRUMB */
+
+.breadcrumb {
+  margin: 20px auto;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+}
+
+.woocommerce-breadcrumb {
+  padding-bottom: 20px !important;
+  border-bottom: 2px solid #000;
+}
+
+/* ARQUIVO */
+
+.produtos-arquivo {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+}
+
+@media (max-width: 800px) {
+  .produtos-arquivo {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* PAGINAÇÃO */
+
+.pagination {
+  margin-top: 40px;
+}
+
+.pagination .page-numbers {
+  border-radius: 2px;
+  background: #000;
+  color: #fff;
+  padding: 4px 10px;
+}
+
+.pagination span.page-numbers {
+  background: orangered;
+}
+
+.pagination .next,
+.pagination .prev {
+  background: #fff;
+  color: #000;
 }

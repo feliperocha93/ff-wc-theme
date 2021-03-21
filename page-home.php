@@ -4,19 +4,6 @@ get_header(); ?>
 
 <?php 
 
-function formatar_produtos($produtos, $img_tamanho) {
-  $produtos_formatados = [];
-  foreach($produtos as $produto) {
-    $produtos_formatados[] = [
-      'nome' => $produto->get_name(),
-      'preco' => $produto->get_price_html(),
-      'link' => $produto->get_permalink(),
-      'img' => wp_get_attachment_image_src($produto->get_image_id(), $img_tamanho)[0],
-    ];
-  }
-  return $produtos_formatados;
-}
-
 $produtos_lancamentos = wc_get_products([
   'limit' => 9,
   'orderby' => 'date',
@@ -37,9 +24,9 @@ $produtos_slide = wc_get_products([
 
 $data = [];
 
-$data['lancamentos'] = formatar_produtos($produtos_lancamentos, 'medium');
-$data['mais_vendidos'] = formatar_produtos($produtos_mais_vendidos, 'medium');
-$data['slide'] = formatar_produtos($produtos_slide, 'slide');
+$data['lancamentos'] = ff_formatar_produtos($produtos_lancamentos, 'medium');
+$data['mais_vendidos'] = ff_formatar_produtos($produtos_mais_vendidos, 'medium');
+$data['slide'] = ff_formatar_produtos($produtos_slide, 'slide');
 
 $home_id = get_the_ID();
 $categoria_esquerda = get_post_meta($home_id, 'categoria_esquerda', true);

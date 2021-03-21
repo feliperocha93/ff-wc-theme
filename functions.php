@@ -1,9 +1,5 @@
 <?php
 
-$config = [
-  'itensPorPagina' => 6
-];
-
 add_action('after_setup_theme', function () { 
   add_theme_support('woocommerce');
 });
@@ -18,10 +14,25 @@ add_action('after_setup_theme', function () {
   update_option('medium_crop', 1);
 });
 
-add_filter('loop_shop_per_page', function () { 
-  return $config['itensPorPagina'];
+add_filter('loop_shop_per_page', function () {
+  $ITENS_POR_PAGINA = 6; 
+  return $ITENS_POR_PAGINA;
 });
 
+?>
+
+<?php function ff_formatar_produtos($produtos, $img_tamanho = 'medium') {
+  $produtos_formatados = [];
+  foreach($produtos as $produto) {
+    $produtos_formatados[] = [
+      'nome' => $produto->get_name(),
+      'preco' => $produto->get_price_html(),
+      'link' => $produto->get_permalink(),
+      'img' => wp_get_attachment_image_src($produto->get_image_id(), $img_tamanho)[0],
+    ];
+  }
+  return $produtos_formatados;
+}
 ?>
 
 <?php function ff_renderizar_lista_de_produtos($lista_de_produtos) { ?>
