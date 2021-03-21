@@ -2,7 +2,6 @@
 // Template Name: Home
 get_header(); ?>
 
-<pre>
 <?php 
 
 function formatar_produtos($produtos, $img_tamanho) {
@@ -61,7 +60,6 @@ function obter_dados_categoria($categoria) {
 $data['categorias'][$categoria_esquerda] = obter_dados_categoria($categoria_esquerda);
 $data['categorias'][$categoria_direita] = obter_dados_categoria($categoria_direita);
 ?>
-</pre>
 
 <?php if(have_posts()) { while (have_posts()) {the_post(); ?>
 

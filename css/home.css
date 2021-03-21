@@ -52,6 +52,15 @@
   margin-bottom: 20px;
 }
 
+@media (max-width: 800px) {
+  .slide-item {
+    grid-template-columns: 1fr;
+  }
+  .slide-info {
+    margin-top: 20px;
+  }
+}
+
 /* CATEGORIAS */
 
 .page-template-page-home .categorias {

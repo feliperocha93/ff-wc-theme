@@ -11,5 +11,6 @@ Theme name: Fuma Forte
 @import "./css/produtos.css";
 
 /* ESTILO DEDICADO*/
+@import "./css/footer.css";
 @import "./css/header.css";
 @import "./css/slide.css";
