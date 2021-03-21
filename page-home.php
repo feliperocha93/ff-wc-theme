@@ -41,6 +41,25 @@ $data = [];
 $data['lancamentos'] = formatar_produtos($produtos_lancamentos, 'medium');
 $data['mais_vendidos'] = formatar_produtos($produtos_mais_vendidos, 'medium');
 $data['slide'] = formatar_produtos($produtos_slide, 'slide');
+
+$home_id = get_the_ID();
+$categoria_esquerda = get_post_meta($home_id, 'categoria_esquerda', true);
+$categoria_direita = get_post_meta($home_id, 'categoria_direita', true);
+
+function obter_dados_categoria($categoria) {
+  $cat = get_term_by('slug', $categoria, 'product_cat');
+  $cat_id = $cat->term_id;
+  $img_id = get_term_meta($cat_id, 'thumbnail_id', true);
+  return [
+    'nome' => $cat->name,
+    'id' => $cat_id,
+    'link' => get_term_link($cat_id, 'product_cat'),
+    'img' => wp_get_attachment_image_src($img_id, 'slide')[0]
+  ];
+}
+
+$data['categorias'][$categoria_esquerda] = obter_dados_categoria($categoria_esquerda);
+$data['categorias'][$categoria_direita] = obter_dados_categoria($categoria_direita);
 ?>
 </pre>
 
@@ -65,6 +84,15 @@ $data['slide'] = formatar_produtos($produtos_slide, 'slide');
       </li>
     <?php } ?>
   </ul>
+</section>
+
+<section class="categorias">
+  <?php foreach($data['categorias'] as $categoria) { ?>
+    <a href="<?= $categoria['link']; ?>">
+      <img src="<?= $categoria['img']; ?>" alt="<?= $categoria['nome']; ?>">
+      <span class="btn-link"><?= $categoria['nome']; ?></span>
+    </a>
+  <?php } ?>
 </section>
 
 <section class="container">
