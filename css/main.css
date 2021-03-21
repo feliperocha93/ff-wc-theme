@@ -12,6 +12,23 @@ img {
   max-width: 100%;
 }
 
+.btn-link {
+  padding: 15px;
+  background: #fff;
+  max-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-link::after {
+  content: "";
+  display: block;
+  background: url("../img/icons/arrow.svg") no-repeat center center;
+  width: 18px;
+  height: 18px;
+}
+
 .container {
   max-width: 1000px;
   margin: 60px auto;
@@ -19,4 +36,29 @@ img {
 
 .hidden {
   display: nones;
+}
+
+.subtitulo {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.375rem;
+  margin-bottom: 60px;
+}
+
+.subtitulo::after,
+.subtitulo::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 6px;
+  background: currentColor;
+  transform: skew(-20deg);
+}
+
+.subtitulo::before {
+  margin: 0 calc(50% + 20px) 0 auto;
+}
+
+.subtitulo::after {
+  margin: 5px calc(50% - 120px) 0 auto;
 }

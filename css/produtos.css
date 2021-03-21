@@ -1,0 +1,38 @@
+.produtos-lista {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+}
+
+.produtos-lista h2 {
+  margin-top: 5px;
+  font-size: 0.725rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.produtos-lista a {
+  display: grid;
+}
+
+.produto-item a:hover .produto-item_overlay {
+  opacity: 1;
+}
+
+.produto-info {
+  grid-area: 1/1;
+}
+
+.produto-item_overlay {
+  opacity: 0;
+  grid-area: 1/1;
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  padding: 20px;
+  transition: opacity 0.3s;
+}
+
+.produto-item_overlay .btn-link {
+  margin: auto;
+  width: 100%;
+}

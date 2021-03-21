@@ -23,3 +23,21 @@ add_filter('loop_shop_per_page', function () {
 });
 
 ?>
+
+<?php function ff_renderizar_lista_de_produtos($lista_de_produtos) { ?>
+  <ul class="produtos-lista">
+    <?php foreach($lista_de_produtos as $produto) { ?>
+      <li class="produto-item">
+        <a href="<?= $produto['link']; ?>">
+          <div class="produto-info">
+            <img src="<?= $produto['img']; ?>" alt="<?= $produto['nome']; ?>"/>
+            <h2><?= $produto['nome']; ?> - <span><?= $produto['price']; ?></span></h2>
+          </div>
+          <div class="produto-item_overlay">
+            <span class="btn-link">Ver Mais</span>
+          </div>
+        </a>
+      </li>
+    <?php } ?>
+  </ul>
+<?php } ?>

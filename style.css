@@ -2,10 +2,14 @@
 Theme name: Fuma Forte
 */
 
+/* ESTILO GLOBAL */
 @import "./css/main.css";
 @import "./css/reset.css";
-@import "./css/slide.css";
 
-@import "./css/header.css";
-
+/* ESTILO PARA PÁGINAS */
 @import "./css/home.css";
+@import "./css/produtos.css";
+
+/* ESTILO DEDICADO*/
+@import "./css/header.css";
+@import "./css/slide.css";
