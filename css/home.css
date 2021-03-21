@@ -1,0 +1,70 @@
+/* VANTAGENS */
+.vantagens {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px 0;
+}
+
+.vantagens li {
+  margin: 0 20px;
+  padding: 5px 0 5px 35px;
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
+.vantagens li:nth-child(1) {
+  background-image: url("../img/icons/frete.svg");
+}
+
+.vantagens li:nth-child(2) {
+  background-image: url("../img/icons/troca.svg");
+}
+
+.vantagens li:nth-child(3) {
+  background-image: url("../img/icons/card.svg");
+}
+
+/* SLIDE */
+.slide-item {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  background: #000;
+  align-self: start;
+}
+
+.slide-info {
+  padding: 0 20px 40px 20px;
+  color: #fff;
+  align-self: end;
+}
+
+.slide-preco {
+  display: block;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+}
+
+.slide-nome {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.slide-link {
+  padding: 15px;
+  background: #fff;
+  max-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slide-link::after {
+  content: "";
+  display: block;
+  background: url("../img/icons/arrow.svg") no-repeat center center;
+  width: 18px;
+  height: 18px;
+}

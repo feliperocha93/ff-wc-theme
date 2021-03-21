@@ -4,4 +4,8 @@ Theme name: Fuma Forte
 
 @import "./css/main.css";
 @import "./css/reset.css";
+@import "./css/slide.css";
+
 @import "./css/header.css";
+
+@import "./css/home.css";
