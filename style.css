@@ -9,6 +9,7 @@ Theme name: Fuma Forte
 /* ESTILO PARA PÁGINAS */
 @import "./css/home.css";
 @import "./css/produtos.css";
+@import "./css/produto.css";
 
 /* ESTILO DEDICADO*/
 @import "./css/footer.css";

@@ -1,0 +1,121 @@
+.product {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-gap: 30px;
+}
+
+@media (max-width: 800px) {
+  .product {
+    grid-template-columns: 1fr;
+  }
+  .product-gallery {
+    grid-row: 2;
+  }
+}
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-gap: 20px;
+}
+
+@media (max-width: 800px) {
+  .product-gallery {
+    grid-template-columns: 1fr;
+  }
+  .product-gallery-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+.product-gallery-list img {
+  margin-bottom: 20px;
+}
+
+.product-detail small {
+  display: block;
+  color: rgba(0,0,0,.5);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.product-detail h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.product-detail h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.product-detail .product-price {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+@media (max-width: 800px) {
+  .product-detail h1 {
+    margin-bottom: 20px;
+  }
+}
+
+.product-detail .button {
+  background: #000;
+  color: #fff;
+  padding: 12px 15px;
+  min-width: 200px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-detail .button::after {
+  content: '';
+  display: block;
+  background: url('../img/icons/add.svg') no-repeat center center;
+  width: 16px;
+  height: 16px;
+  transition: .3s;
+}
+
+.product-detail .button:hover::after {
+  transform: rotate(180deg);
+}
+
+.product-detail .button.disabled {
+  opacity: .5;
+  cursor: initial;
+}
+
+.product-detail .variations tr {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.product-detail select {
+  font-size: 1rem;
+}
+
+.product-detail .reset_variations {
+  display: none !important;
+}
+
+.product-detail .stock {
+  margin-bottom: 10px;
+}
+
+.product-detail .quantity {
+  display: none !important;
+}
