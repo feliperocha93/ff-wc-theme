@@ -94,3 +94,118 @@
   background: #fff;
   color: #000;
 }
+
+/* FILTROS */
+
+.filtro,
+.filtro .widget {
+  margin-bottom: 40px;
+}
+
+.filtro-titulo,
+.filtro .widget h2 {
+  font-size: 1.125rem;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.filtro-preco input {
+  font-size: 1rem;
+  width: 80px;
+  border: none;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px;
+}
+
+.filtro-preco label {
+  width: 60px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.filtro-preco button {
+  font-size: 1rem;
+  width: 144px;
+  height: 36px;
+  border: none;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .filtros {
+    margin-top: 40px;
+    grid-row: 2;
+  }
+  .filtros::before {
+    content: "Filtrar Resultados";
+    display: block;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+}
+
+.filtro-cat .sub-menu {
+  margin-bottom: 20px;
+}
+
+.filtro-cat a {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.filtro-cat .sub-menu a::before {
+  content: "";
+  width: 10px;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.current-menu-item > a {
+  color: orangered;
+}
+
+.woocommerce
+  .woocommerce-widget-layered-nav-list
+  .woocommerce-widget-layered-nav-list__item
+  a::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: transparent;
+  border: 2px solid #000;
+  margin-right: 8px;
+}
+
+.woocommerce
+  .woocommerce-widget-layered-nav-list
+  .woocommerce-widget-layered-nav-list__item--chosen
+  a::before {
+  background: #000;
+}
+
+.woocommerce .woocommerce-widget-layered-nav-list .count {
+  display: none;
+}
+
+/* ORDEM */
+
+.woocommerce-ordering {
+  margin-bottom: 20px;
+  margin-left: auto;
+  float: none !important;
+}
+
+.woocommerce-ordering select {
+  font-size: 1rem;
+}

@@ -19,6 +19,19 @@ add_filter('loop_shop_per_page', function () {
   return $ITENS_POR_PAGINA;
 });
 
+function remover_classes_do_body($classes) {
+  $woo_class = array_search('woocommerce', $classes);
+  $woopage_class = array_search('woocommerce-page', $classes);
+  //Verificar se existe essas classes dentro do array
+  $search = in_array('archive', $classes) || in_array('product-template-default', $classes);
+  if($woo_class && $woopage_class && $search) {
+    unset($classes[$woo_class]);
+    unset($classes[$woopage_class]);
+  }
+  return $classes;
+}
+add_filter('body_class', 'remover_classes_do_body');
+
 ?>
 
 <?php function ff_formatar_produtos($produtos, $img_tamanho = 'medium') {
